@@ -1,18 +1,29 @@
 import React from 'react'
 
-const Cards = () => {
+import { Usestate } from 'react'
+const Cards = ({hello}) => {
+  
+ 
+  
   return (
-        <div className=' mt-6 bg-black rounded-4xl w-[400px] h-[400px] shadow-2xl    '>
- <div className=''><img  className='h-[300px]  p-6    w-[400px]   rounded-4xl' src="https://th.bing.com/th/id/OIP.xiLk6II7SS7bLC-CXwSykwHaE8?w=280&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="" /></div>
-     
-      <div className='text-3xl  text-blue-300  font-bold text-center  '> Hamro jutta pasal </div>
-      <div className='flex justify-between p-4'>
-        <div className='text-white  font-bold  bg-green-700  rounded-2xl  p-1'>Rs:100</div>
-        <div className=' text-white font-bold  bg-green-700  rounded-2xl p-1'>Stock:22</div>
-      
+<div className="max-w-sm mb-6 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg">
+  <a href="#">
+    <img srcSet= {hello.image} />
+    <div className="flex items-center mb-3">
+      <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold leading-5 text-white font-display mr-2 capitalize bg-red-500">
+        {hello.description}
+      </span>
+      <p className="font-mono text-xs font-normal opacity-75 text-black">{hello.title}</p>
+    </div>
+    <p className="font-display max-w-sm text-2xl font-bold leading-tight">
+      <span className="link-underline link-underline-black text-black">
+       {hello.subtitle}
+      </span>
+    </p>
+  </a>
+</div>
 
-    </div>
-    </div>
+
   )
 }
 
