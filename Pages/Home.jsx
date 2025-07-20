@@ -30,7 +30,7 @@ fetchBlogs()
   {blogs.map(function(blog){
     return(    
       <Cards 
-      key={blog.id} hello={blog}/>
+      key={blog.id} hello={blog} />
     )
   }
   

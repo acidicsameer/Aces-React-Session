@@ -1,13 +1,15 @@
 import React from 'react'
-
-import { Usestate } from 'react'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const Cards = ({hello}) => {
   
  
   
   return (
+  <>
+  
 <div className="max-w-sm mb-6 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 border p-4 rounded-lg shadow-lg">
-  <a href="#">
+  <Link to ={"/single" + hello.id}> 
     <img srcSet= {hello.image} />
     <div className="flex items-center mb-3">
       <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold leading-5 text-white font-display mr-2 capitalize bg-red-500">
@@ -19,11 +21,10 @@ const Cards = ({hello}) => {
       <span className="link-underline link-underline-black text-black">
        {hello.subtitle}
       </span>
-    </p>
-  </a>
-</div>
-
-
+    </p></Link>
+    </div>
+  
+  </>
   )
 }
 

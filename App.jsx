@@ -22,9 +22,11 @@ const App = () => {
       <Route path='/about'  element={ <About />}/>
     
         <Route path='/blog'  element={ <Blog />}/>
-          <Route path='/single'  element={ <SinglePages />}/>
+        {/* harek  id ma vako single  page haru ma jana sakiyo /:id lekhepar  */}
+          <Route path='/single/:id'  element={ <SinglePages />}/>  
           
           <Route path='/learnusestate'  element={ <LearnUseState />}/>
+          
       </Routes>
       </BrowserRouter>
       </>)
