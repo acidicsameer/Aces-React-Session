@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate, useParams } from 'react-router-dom'
-const Edit = () => {
+import { useNavigate } from 'react-router-dom'
+const CreatePage = () => {
    const [title,setTitle]=useState("")
     const [subtitle,setSubTitle]=useState("")
     const [description,setDescription]=useState("")
     const[image,setImage]=useState("")
     const navigate=useNavigate()
-const data=useParams()
-  async function sentEditDataToBackend(e){
+
+  async function sentDataToBackend(e){
     e.preventDefault()
-   const response = await axios.put("https://687af384abb83744b7ee48c9.mockapi.io/Blogs/"+data.id,{
+   const response = await axios.post("https://687af384abb83744b7ee48c9.mockapi.io/Blogs/",{
 
 
     title:title,
@@ -19,7 +19,7 @@ const data=useParams()
     image:image
  
   })
-  if(response.status ==200){
+  if(response.status ==201){
     navigate('/')
 
   }
@@ -32,9 +32,8 @@ const data=useParams()
   return (
 <>
 <div className="mx-14 mt-10 border-2 border-blue-400 rounded-lg">
-  <div className="mt-10 text-center font-bold">Contact Us</div>
-  <div className="mt-3 text-center text-4xl font-bold">Make an Appointment</div>
-  <form  onSubmit={sentEditDataToBackend} className="p-8">
+  <div className="mt-3 text-center text-4xl font-bold">create a blog</div>
+  <form  onSubmit={sentDataToBackend} className="p-8">
     <div className="flex gap-4">
       <input type="text" name="title" className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="enter the title"  onChange={(e)=>setTitle(e.target.value)}/>
       <input type="text" name="subtitle" className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm" placeholder="enter the subtitle" onChange={(e)=>setSubTitle(e.target.value)} />
@@ -53,4 +52,4 @@ const data=useParams()
   )
 }
 
-export default Edit
+export default CreatePage

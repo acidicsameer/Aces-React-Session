@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar'
 
 import SinglePages from './Pages/SinglePages'
 import LearnUseState from './Pages/LearnUseState'
+import CreatePage from './Pages/CreatePage'
 const App = () => {
   
   return (
@@ -18,7 +19,7 @@ const App = () => {
    <Navbar />
     <Routes>
       <Route  path='/' element={  <Home />}/>
-      <Route  path='/edit' element={<Edit />} />
+      <Route  path='/edit/:id' element={<Edit />} />
       <Route path='/about'  element={ <About />}/>
     
         <Route path='/blog'  element={ <Blog />}/>
@@ -26,7 +27,7 @@ const App = () => {
           <Route path='/single/:id'  element={ <SinglePages />}/>  
           
           <Route path='/learnusestate'  element={ <LearnUseState />}/>
-          
+          <Route path='/create'  element={ <CreatePage />}/>
       </Routes>
       </BrowserRouter>
       </>)
