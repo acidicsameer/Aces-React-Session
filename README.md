@@ -1,4 +1,4 @@
-Welcome to my React.js learning journey! This repository contains all my work, notes, and hands-on code from the **7-Day React.js Workshop** organized by **ACES** and **Digital पाठशाला**. 📘
+Welcome to my React.js learning journey! This repository contains all my work, notes, and hands-on code from the **7-Day React.js Workshop** organized by **ACES** and **Digital पाठशाला-manish basnet **. 📘
 
 ---
 
